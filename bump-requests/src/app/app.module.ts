@@ -4,15 +4,20 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { EventsComponent } from './events/events.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    EventsComponent,
+    // AppRoutingModule
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
