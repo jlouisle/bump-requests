@@ -1,14 +1,25 @@
-# bump-requests
+# Bump Requests
 
-brew install node
-npm i npm ?
-cd bump-requests
+Install node and npm
+`brew install node`
 
+Install the Angular CLI globally.
+`npm install -g  @angular/cli`
 
-Then install the Angular CLI globally.
-  npm install -g  @angular/cli
+Serve angular
+`cd bump-requests`
+`ng serve -o`
 
-ng new bump-requests
+### Generate [blueprint]
+`ng generate [blueprint] [name]`
 
-cd bump-requests
-ng serve --open
+__[blueprint]__:
+  * component
+  * module
+  * class
+  * directive
+  * enum
+  * guard
+  * interface
+  * pipe
+  * service
