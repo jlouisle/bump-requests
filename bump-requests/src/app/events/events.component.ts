@@ -11,7 +11,7 @@ export class EventsComponent implements OnInit {
   events: Object[];
 
   getEvents(): void {
-    this.dataService.getEvents().subscribe(events => this.events = events['data']);
+    this.dataService.getMultiple('events').subscribe(events => this.events = events['data']);
   }
 
   ngOnInit() {

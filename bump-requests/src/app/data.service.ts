@@ -9,26 +9,13 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getEvents(): Observable<Object[]> {
-    let dataUrl = 'http://localhost:5000/api/events/';
+  getMultiple(table): Observable<Object[]> {
+    let dataUrl = 'http://localhost:5000/api/'+table+'/';
     return this.http.get<Object[]>(dataUrl);
   }
 
-  getEvent(id): Observable<Object[]> {
-    let dataUrl = 'http://localhost:5000/api/events/' + id;
-    console.log(dataUrl);
+  getSingle(table,id): Observable<Object[]> {
+    let dataUrl = 'http://localhost:5000/api/'+table+'/'+id;
     return this.http.get<Object[]>(dataUrl);
   }
-
-  getTeams(): Observable<Object[]> {
-    let dataUrl = 'http://localhost:5000/api/teams/';
-    return this.http.get<Object[]>(dataUrl);
-  }
-
-  getTeam(id): Observable<Object[]> {
-    let dataUrl = 'http://localhost:5000/api/teams/' + id;
-    console.log(dataUrl);
-    return this.http.get<Object[]>(dataUrl);
-  }
-
 }

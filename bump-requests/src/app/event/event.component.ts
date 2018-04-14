@@ -26,7 +26,7 @@ export class EventComponent implements OnInit {
   event: Object;
 
   getEvent(id): void {
-    this.dataService.getEvent(id).subscribe(event_ => this.event = event_['data']);
+    this.dataService.getSingle('events',id).subscribe(event_ => this.event = event_['data']);
   }
 
 }

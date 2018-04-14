@@ -11,7 +11,7 @@ export class TeamsComponent implements OnInit {
   teams: Object[];
 
   getTeams(): void {
-    this.dataService.getTeams().subscribe(teams => this.teams = teams['data']);
+    this.dataService.getMultiple('teams').subscribe(teams => this.teams = teams['data']);
   }
 
   ngOnInit() {

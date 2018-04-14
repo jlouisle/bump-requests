@@ -26,7 +26,7 @@ export class TeamComponent implements OnInit {
   team: Object;
 
   getTeam(id): void {
-    this.dataService.getTeam(id).subscribe(team_ => this.team = team_['data']);
+    this.dataService.getSingle('teams',id).subscribe(team_ => this.team = team_['data']);
   }
 
 }
