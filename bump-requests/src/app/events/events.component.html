@@ -1,3 +1,16 @@
-<p>
-  events works!
-</p>
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Date</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events">
+        <td>{{ event['name'] }}</td>
+        <td>{{ event['date'] }}</td>
+        <td>{{ event['ID'] }}</td>
+    </tr>
+  </tbody>
+</table>
