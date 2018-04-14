@@ -3,12 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { EventsComponent }      from './events/events.component';
 import { EventComponent }      from './event/event.component';
+import { TeamsComponent } from './teams/teams.component';
+import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
   { path: 'events', component: EventsComponent },
-  { path: 'event/:id', component: EventComponent }
-  // { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'event/:id', component: EventComponent },
+  { path: 'teams', component: TeamsComponent },
+  { path: 'team/:id', component: TeamComponent }
 ];
 
 @NgModule({

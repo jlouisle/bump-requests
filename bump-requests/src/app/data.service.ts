@@ -20,4 +20,15 @@ export class DataService {
     return this.http.get<Object[]>(dataUrl);
   }
 
+  getTeams(): Observable<Object[]> {
+    let dataUrl = 'http://localhost:5000/api/teams/';
+    return this.http.get<Object[]>(dataUrl);
+  }
+
+  getTeam(id): Observable<Object[]> {
+    let dataUrl = 'http://localhost:5000/api/teams/' + id;
+    console.log(dataUrl);
+    return this.http.get<Object[]>(dataUrl);
+  }
+
 }
