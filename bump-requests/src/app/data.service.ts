@@ -9,10 +9,15 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  private dataUrl = 'http://localhost:5000/api/events/';  // URL to web api
-
   getEvents(): Observable<Object[]> {
-    return this.http.get<Object[]>(this.dataUrl);
+    let dataUrl = 'http://localhost:5000/api/events/';
+    return this.http.get<Object[]>(dataUrl);
+  }
+
+  getEvent(id): Observable<Object[]> {
+    let dataUrl = 'http://localhost:5000/api/events/' + id;
+    console.log(dataUrl);
+    return this.http.get<Object[]>(dataUrl);
   }
 
 }

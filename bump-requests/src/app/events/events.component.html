@@ -10,7 +10,10 @@
     <tr *ngFor="let event of events">
         <td>{{ event['name'] }}</td>
         <td>{{ event['date'] }}</td>
-        <td>{{ event['ID'] }}</td>
+        <td>
+          <a [routerLink]="['/event/', event['id']]">
+            edit
+          </a></td>
     </tr>
   </tbody>
 </table>

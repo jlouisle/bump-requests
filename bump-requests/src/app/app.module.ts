@@ -8,12 +8,14 @@ import { AppRoutingModule } from './/app-routing.module';
 import { EventsComponent } from './events/events.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './data.service';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    EventsComponent
+    EventsComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
