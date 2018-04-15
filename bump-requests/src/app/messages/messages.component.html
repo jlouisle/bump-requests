@@ -2,35 +2,33 @@
     <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
 </a>
 <ul class="dropdown-menu dropdown-messages">
+<ng-container *ngIf="messageService.messages.length; else no_messages"> 
+  <ng-container *ngFor="let message of messageService.messages"> 
     <li>
-        <a>
-            <div>
-                <strong>John Smith</strong>
-                <span class="pull-right text-muted">
-                    <em>Yesterday</em>
-                </span>
-            </div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-        </a>
+      <a>
+        <div>
+          <strong>message</strong>
+          <span class="pull-right text-muted">
+            <em>message</em>
+          </span>
+        </div>
+        <div>{{message}}</div>
+      </a>
     </li>
     <li class="divider"></li>
-    <li>
-        <a>
-            <div>
-                <strong>John Smith</strong>
-                <span class="pull-right text-muted">
-                    <em>Yesterday</em>
-                </span>
-            </div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-        </a>
-    </li>
-    <li class="divider"></li>
-    <li>
-        <a class="text-center">
-            <strong>Read All Messages</strong>
-            <i class="fa fa-angle-right"></i>
-        </a>
-    </li>
-</ul>
+  </ng-container>
+</ng-container>
+<ng-template #no_messages>
+  <li>
+    <a class="text-center">
+      <i>no messages</i>
+    </a>
+  </li>
+  <li class="divider"></li>
+</ng-template>
+<li>
+    <a class="text-center clear" (click)="messageService.clear()">
+        <strong>Clear Messages</strong>
+    </a>
+</li>
 

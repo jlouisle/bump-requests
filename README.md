@@ -6,7 +6,7 @@ Install node and npm
 Install the Angular CLI globally.
 `npm install -g  @angular/cli`
 
-Serve angular
+Serve Angular
 `cd bump-requests`
 `ng serve -o`
 

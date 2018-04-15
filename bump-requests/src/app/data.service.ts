@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { MessageService } from './message.service';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -11,14 +13,19 @@ const httpOptions = {
 @Injectable()
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+    ) { }
 
   getMultiple(table): Observable<Object[]> {
+    this.messageService.add('DataService: fetched multiple  '  + table);
     let dataUrl = 'http://localhost:5000/api/'+table+'/';
     return this.http.get<Object[]>(dataUrl);
   }
 
   getSingle(table,id): Observable<Object[]> {
+    this.messageService.add('DataService: fetched single  ' + table);
     let dataUrl = 'http://localhost:5000/api/'+table+'/'+id;
     return this.http.get<Object[]>(dataUrl);
   }
@@ -30,7 +37,5 @@ export class DataService {
   //     catchError(this.handleError<any>('updateHero'))
   //   );
   // }
-
-
-
+  
 }
