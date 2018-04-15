@@ -13,6 +13,8 @@ import { TeamComponent } from './team/team.component';
 import { TeamsComponent } from './teams/teams.component';
 import { RequestComponent } from './request/request.component';
 import { RequestsComponent } from './requests/requests.component';
+import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
 
 
 @NgModule({
@@ -25,13 +27,14 @@ import { RequestsComponent } from './requests/requests.component';
     TeamsComponent,
     RequestsComponent,
     RequestComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

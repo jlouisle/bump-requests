@@ -25,6 +25,11 @@ export class EventComponent implements OnInit {
 
   event: Object;
 
+  // save(): void {
+  //   this.dataService.updateTable(this.hero)
+  //     .subscribe(() => this.goBack());
+  // }
+
   getEvent(id): void {
     this.dataService.getSingle('events',id).subscribe(event_ => this.event = event_['data']);
   }
