@@ -11,6 +11,8 @@ import { DataService } from './data.service';
 import { EventComponent } from './event/event.component';
 import { TeamComponent } from './team/team.component';
 import { TeamsComponent } from './teams/teams.component';
+import { RequestComponent } from './request/request.component';
+import { RequestsComponent } from './requests/requests.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { TeamsComponent } from './teams/teams.component';
     EventsComponent,
     EventComponent,
     TeamComponent,
-    TeamsComponent
+    TeamsComponent,
+    RequestsComponent,
+    RequestComponent,
   ],
   imports: [
     BrowserModule,
