@@ -1,21 +1,28 @@
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
-import { RequestComponent } from './request/request.component';
-import { RequestsComponent } from './requests/requests.component';
-import { MessagesComponent } from './messages/messages.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { EventsComponent } from './events/events.component';
-import { EventComponent } from './event/event.component';
-import { TeamsComponent } from './teams/teams.component';
-import { TeamComponent } from './team/team.component';
+import { EnsureAuthenticated } from './services/ensure-authenticated.service';
+import { RegisterComponent } from './components/register/register.component';
+import { RequestsComponent } from './components/requests/requests.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { RequestComponent } from './components/request/request.component';
+import { StatusComponent } from './components/status/status.component';
+import { EventsComponent } from './components/events/events.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { EventComponent } from './components/event/event.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { MessageService } from './services/message.service';
+import { LoginRedirect } from './services/login-redirect.service';
+import { TeamComponent } from './components/team/team.component';
 import { AppComponent } from './app.component';
-
-import { MessageService } from './message.service';
-import { DataService } from './data.service';
-
+import { AuthService } from './services/auth.service';
+import { DataService } from './services/data.service';
+import { CreateRequestComponent } from './components/create-request/create-request.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +35,19 @@ import { DataService } from './data.service';
     TeamsComponent,
     TeamComponent,
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    StatusComponent,
+    CreateRequestComponent,
   ],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
+    FormsModule,
+    HttpModule,
   ],
-  providers: [DataService, MessageService],
+  providers: [DataService, MessageService, AuthService, LoginRedirect, EnsureAuthenticated],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
