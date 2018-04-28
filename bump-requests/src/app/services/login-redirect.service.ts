@@ -8,7 +8,7 @@ export class LoginRedirect implements CanActivate {
   
   canActivate(): boolean {
     if (localStorage.getItem('token')) {
-      this.router.navigateByUrl('/status');
+      this.router.navigateByUrl('/events');
       return false;
     }
     else {

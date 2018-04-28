@@ -10,7 +10,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { RequestsComponent } from './components/requests/requests.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { RequestComponent } from './components/request/request.component';
-import { StatusComponent } from './components/status/status.component';
 import { EventsComponent } from './components/events/events.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -37,7 +36,6 @@ import { CreateRequestComponent } from './components/create-request/create-reque
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    StatusComponent,
     CreateRequestComponent,
   ],
   imports: [

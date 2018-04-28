@@ -11,7 +11,6 @@ import { TeamComponent } from './components/team/team.component';
 
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { StatusComponent } from './components/status/status.component';
 
 import { EnsureAuthenticated } from './services/ensure-authenticated.service';
 import { LoginRedirect } from './services/login-redirect.service';
@@ -19,7 +18,6 @@ import { LoginRedirect } from './services/login-redirect.service';
 const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginRedirect] },
   { path: 'register', component: RegisterComponent, canActivate: [LoginRedirect] },
-  { path: 'status', component: StatusComponent, canActivate: [EnsureAuthenticated] },
 
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'events', component: EventsComponent, canActivate: [EnsureAuthenticated]},
