@@ -22,10 +22,22 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  logout(){
-    localStorage.removeItem('token');
-    console.log('logged out');
-    this.router.navigateByUrl('/login');
-  }
 
+  
+  logout(): void {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.auth.logout(token)
+      .then((user) => {
+        console.log(user.json());
+        if (user.json().status === 'success') {
+          localStorage.removeItem('token');
+          this.router.navigateByUrl('/login');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+  }
 }

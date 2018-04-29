@@ -16,6 +16,15 @@ export class AuthService {
     return this.http.post(url, user, {headers: this.headers}).toPromise();
   }
 
+  logout(token): Promise<any> {
+    let url: string = `${this.BASE_URL}/logout`;
+    let headers: Headers = new Headers({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    return this.http.post(url, headers, {headers: headers}).toPromise();
+  }
+
   register(user: User): Promise<any> {
     let url: string = `${this.BASE_URL}/register`;
     return this.http.post(url, user, {headers: this.headers}).toPromise();
